@@ -14,6 +14,18 @@ class App : Application() {
     }
 }
 
-@Component()
+@Component(modules = [AppModule::class])
 interface AppComponent{
+    val viewModel: ViewModel
 }
+
+@Module
+class AppModule{
+
+    @Provides
+    fun provideViewModel(): ViewModel{
+        return ViewModel()
+    }
+}
+
+class ViewModel()
