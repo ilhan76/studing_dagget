@@ -5,10 +5,9 @@ import com.kudashov.testdagger.di.interfases.ActivityDeps
 import com.kudashov.testdagger.di.interfases.AppDeps
 import com.kudashov.testdagger.di.scope.AppScope
 import dagger.*
-import javax.inject.Singleton
 
-@Component(dependencies = [AppDeps::class])
 @AppScope
+@Component(dependencies = [AppDeps::class])
 interface AppComponent : ActivityDeps {
 
     override fun application(): App

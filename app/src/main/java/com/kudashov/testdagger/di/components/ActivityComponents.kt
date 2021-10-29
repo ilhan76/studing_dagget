@@ -11,8 +11,8 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Qualifier
 
-@Component(dependencies = [AppComponent::class], modules = [ActivityModule::class])
 @ActivityScope
+@Component(dependencies = [AppComponent::class], modules = [ActivityModule::class])
 interface ActivityComponent {
 
     @Component.Builder
@@ -30,7 +30,6 @@ interface ActivityComponent {
 class ActivityModule {
 
     @Provides
-    @ActivityScope
     fun providePresenter(app: App): Presenter {
         return PresenterImpl(app)
     }
