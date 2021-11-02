@@ -16,13 +16,15 @@ import javax.inject.Scope
 @Component(dependencies = [AppComponent::class], modules = [ActivityModule::class])
 interface ActivityComponent {
 
-    @Component.Builder
+    fun appComponent(appComponent: AppComponent)
+
+/*    @Component.Builder
     interface Builder {
 
         fun appComponent(appComponent: AppComponent): Builder
 
         fun build(): ActivityComponent
-    }
+    }*/
 
     fun inject(mainActivity: MainActivity)
 }
