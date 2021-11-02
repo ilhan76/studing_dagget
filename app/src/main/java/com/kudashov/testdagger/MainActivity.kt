@@ -2,8 +2,6 @@ package com.kudashov.testdagger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toast
 import com.kudashov.testdagger.di.components.DaggerActivityComponent
 import javax.inject.Inject
 

@@ -27,7 +27,7 @@ interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 }
 
-@Module()
+@Module
 class ActivityModule {
 
     @ActivityScope

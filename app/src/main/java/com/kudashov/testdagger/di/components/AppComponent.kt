@@ -1,19 +1,18 @@
 package com.kudashov.testdagger.di.components
 
 import com.kudashov.testdagger.App
-import com.kudashov.testdagger.di.interfases.ActivityDeps
-import com.kudashov.testdagger.di.interfases.AppDeps
 import dagger.*
 
-@Component(dependencies = [AppDeps::class])
-interface AppComponent : ActivityDeps {
+@Component
+interface AppComponent {
 
-    override fun application(): App
+    fun application(): App
 
     @Component.Builder
     interface Builder {
 
-        fun deps(appDeps: AppDeps): Builder
+        @BindsInstance
+        fun deps(app: App): Builder
 
         fun build(): AppComponent
     }
