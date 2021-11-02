@@ -4,11 +4,13 @@ import com.kudashov.testdagger.App
 import com.kudashov.testdagger.MainActivity
 import com.kudashov.testdagger.Presenter
 import com.kudashov.testdagger.PresenterImpl
+import com.kudashov.testdagger.di.scope.ActivityScope
 import dagger.Binds
 import dagger.Component
 import dagger.Module
 import dagger.Provides
 import javax.inject.Qualifier
+import javax.inject.Scope
 
 @ActivityScope
 @Component(dependencies = [AppComponent::class], modules = [ActivityModule::class])
@@ -25,7 +27,7 @@ interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 }
 
-@Module(includes = [ActivityBindModule::class])
+@Module()
 class ActivityModule {
 
     @ActivityScope
@@ -34,13 +36,3 @@ class ActivityModule {
         return PresenterImpl(app)
     }
 }
-
-@Module
-interface ActivityBindModule{
-    @Binds
-    fun bindPresenter(presenterImpl: PresenterImpl): Presenter
-}
-
-@Qualifier
-@Retention(AnnotationRetention.RUNTIME)
-annotation class ActivityScope
