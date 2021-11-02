@@ -1,6 +1,5 @@
 package com.kudashov.testdagger.di.components
 
-import ActivityScope
 import com.kudashov.testdagger.App
 import com.kudashov.testdagger.MainActivity
 import com.kudashov.testdagger.Presenter
@@ -29,6 +28,7 @@ interface ActivityComponent {
 @Module(includes = [ActivityBindModule::class])
 class ActivityModule {
 
+    @ActivityScope
     @Provides
     fun providePresenter(app: App): Presenter {
         return PresenterImpl(app)
@@ -41,3 +41,10 @@ interface ActivityBindModule{
     fun bindPresenter(presenterImpl: PresenterImpl): Presenter
 }
 
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ActivityScope
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class AppScope
