@@ -44,7 +44,3 @@ interface ActivityBindModule{
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
 annotation class ActivityScope
-
-@Qualifier
-@Retention(AnnotationRetention.RUNTIME)
-annotation class AppScope

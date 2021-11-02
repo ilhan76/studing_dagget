@@ -5,7 +5,6 @@ import com.kudashov.testdagger.di.interfases.ActivityDeps
 import com.kudashov.testdagger.di.interfases.AppDeps
 import dagger.*
 
-@AppScope
 @Component(dependencies = [AppDeps::class])
 interface AppComponent : ActivityDeps {
 
