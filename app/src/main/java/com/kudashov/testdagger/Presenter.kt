@@ -10,7 +10,7 @@ interface Presenter {
 
 class PresenterImpl @Inject constructor(val application: App) : Presenter {
     override fun doSmth() {
-        Log.i("TAG", "doSmth: Presenter are doing something")
+        Log.i("TAG", "doSmth: Presenter are doing something ${application.hashCode()}")
         Toast.makeText(application.applicationContext, "Presenter are doing something", Toast.LENGTH_SHORT).show()
     }
 }

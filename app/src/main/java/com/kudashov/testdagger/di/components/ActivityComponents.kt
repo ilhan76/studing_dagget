@@ -18,14 +18,6 @@ interface ActivityComponent {
 
     fun appComponent(appComponent: AppComponent)
 
-/*    @Component.Builder
-    interface Builder {
-
-        fun appComponent(appComponent: AppComponent): Builder
-
-        fun build(): ActivityComponent
-    }*/
-
     fun inject(mainActivity: MainActivity)
 }
 
